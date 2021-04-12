@@ -3,6 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import firebaseConfig from './config/firebaseConfig'
+import firebase from 'firebase/app'
+
+firebase.initializeApp(firebaseConfig)
 
 ReactDOM.render(
   <React.StrictMode>
