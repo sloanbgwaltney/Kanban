@@ -1,4 +1,5 @@
 import React from 'react'
+import Otherwise from './Otherwise'
 import When from "./When"
 
 function OtherwiseWhen (props) {
@@ -6,12 +7,13 @@ function OtherwiseWhen (props) {
 
   return (
     <>
-      {React.Children.map(props.children, (child, index) => {
+      {React.Children.map(props.children, (child) => {
         if (child.type === When && child.props.condition) {
           hasReturned = true
           return child
         }
-        if (index === props.children.length - 1 && !hasReturned) {
+        if (child.type === Otherwise && !hasReturned) {
+          hasReturned = false
           return child
         }
         return null
