@@ -32,11 +32,11 @@ function Navbar () {
                   <button className="is-loading is-primary"></button>
                 </When>
                 <When condition={user}>
-                  <button>Logout</button>
+                  <button className="button is-light">Logout</button>
                   <Link to="/profile">Hello {user?.displayName}</Link>
                 </When>
                 <Otherwise>
-                  <button className="button is-light">Sign Up</button>
+                  <button className="button is-light" ><Link to="/register">Sign Up</Link></button>
                   <button className="button is-primary">Login</button>
                 </Otherwise>
               </OtherwiseWhen>
