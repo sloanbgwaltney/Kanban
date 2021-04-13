@@ -1,4 +1,5 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import Register from '../pages/Register'
 import Navbar from './Navbar'
 
 function AppRouter () {
@@ -6,7 +7,7 @@ function AppRouter () {
     <BrowserRouter>
       <Navbar></Navbar>
       <Switch>
-        <Route></Route>
+        <Route path="/register" component={Register}></Route>
       </Switch>
     </BrowserRouter>
   )
