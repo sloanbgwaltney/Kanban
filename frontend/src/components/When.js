@@ -1,5 +1,4 @@
 function When (props) {
-  console.log(props.condition)
   return (
     <>
       {
