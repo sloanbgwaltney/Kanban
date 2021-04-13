@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import firebaseConfig from './config/firebaseConfig'
 import firebase from 'firebase/app'
 import 'firebase/auth'
+import 'firebase/firestore'
 
 firebase.initializeApp(firebaseConfig)
 
