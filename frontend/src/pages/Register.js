@@ -33,6 +33,7 @@ function Register () {
           displayName: value.displayName,
           uid: credential.user.uid
         })
+        await firebase.auth().currentUser.updateProfile({ displayName: value.displayName })
         setLoading(false)
         history.push("/")
       } catch (e) {
