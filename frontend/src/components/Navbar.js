@@ -33,7 +33,7 @@ function Navbar () {
                 </When>
                 <When condition={user}>
                   <button className="button is-light" onClick={() => firebase.auth().signOut()}>Logout</button>
-                  <Link to="/profile">Hello {user?.displayName}</Link>
+                  <Link className="navbar-item" to="/profile">Hello {user?.displayName}</Link>
                 </When>
                 <Otherwise>
                   <button className="button is-light" ><Link to="/register">Sign Up</Link></button>
