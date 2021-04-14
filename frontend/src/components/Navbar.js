@@ -24,6 +24,9 @@ function Navbar () {
 
       </div>
       <div id="navbar" className={classNames({ "navbar-menu": true, 'is-active': dropdownActive })}>
+        <div className="navbar-start">
+          <Link className="navbar-item" to="/boards">My Boards</Link>
+        </div>
         <div className="navbar-end">
           <div className="navbar-item">
             <div className="buttons">
