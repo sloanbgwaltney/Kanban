@@ -18,10 +18,10 @@ function BoardList () {
           <Loading></Loading>
         </When>
         <When condition={user && document}>
-          <CreateBoard user={user} boards={user.boards}></CreateBoard>
-          <When condition={document.boards}>
+          <CreateBoard user={user} boards={document?.boards}></CreateBoard>
+          <When condition={document && document?.boards}>
             {
-              document.boards.map((board, i) => (
+              document?.boards.map((board, i) => (
                 <div className="card" key={i}>
                   <header className="card-header">
                     <p className="card-header-title">{board.name}</p>
