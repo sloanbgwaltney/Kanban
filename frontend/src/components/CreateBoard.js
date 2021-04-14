@@ -26,8 +26,8 @@ function CreateBoard ({ user, boards }) {
               const batch = firebase.firestore().batch()
               const boardOperation = firebase.firestore().collection('/boards').doc()
               const userOperations = firebase.firestore().collection('/users').doc(user.uid)
-              batch.set(boardOperation, { id: boardOperation.id, name, description, createdBy: user.uid, users: { [user.uid]: { roles: ['OWNER'] } } })
-              batch.update(userOperations, { boards: boards ? boards.push({ name, description, id: boardOperation.id }) : [{ name, description, id: boardOperation.id }] })
+              batch.set(boardOperation, { id: boardOperation.id, name, description, createdBy: user.uid, users: { [user.uid]: { roles: ['OWNER'] } }, columns: [{ name: "To Do", order: 0 }, { name: "In Progress", order: 1 }, { name: "Verification", order: 2 }, { name: "Done", order: 3 }, { name: "Merged", order: 4 }] })
+              batch.update(userOperations, { boards: boards ? [...boards, { name, description, id: boardOperation.id }] : [{ name, description, id: boardOperation.id }] })
               await batch.commit()
               setLoading(false)
             } catch (e) {
